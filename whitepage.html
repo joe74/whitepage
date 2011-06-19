@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{Title}{block:PostTitle}: {PostTitle}{/block:PostTitle}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}">
+    {block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
+
+    <!-- Custom link colors and show/hide post notes -->
+    <meta name="color:Link color" content="#627480">
+    <meta name="color:Link underline color" content="#C6D8E4">
+    <meta name="if:Show post notes" content="1">
+
+    <style>
+
+    body {
+      background: white;
+      font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
+      font-size: 11px;
+      line-height: 18px;
+      text-rendering: optimizeLegibility;
+      color: #323B41;
+      margin: 0;
+      padding: 0;
+    }
+
+      #wrapper {
+        width: 485px;
+        margin: 0 auto 3em;
+        position: relative;
+      }
+
+        #header {
+          text-align: center;
+          margin: 3.25em 0 6.5em 0;
+        }
+
+          #header h1 {
+            font-family: "Gill Sans", "Gill Sans Std", "Gill Sans MT", Georgia, serif;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 21px;
+            letter-spacing: 1px;
+            text-transform: lowercase;
+            margin: 0;
+          }
+
+          #header h1 a, #header h1 a:hover {
+            color: #323B41;
+            text-decoration: none;
+          }
+
+          #description {
+            font-size: 10px;
+            line-height: 15px;
+            color: #A8A8A8;
+            text-align: center;
+            margin: 0.5em 0 0 0;
+          }
+
+          #description a {
+            color: #A8A8A8;
+            text-decoration: none;
+            padding-bottom: 1px;
+            border-bottom: 1px solid {color:Link underline color};
+          }
+
+          #description a:hover {
+            border-bottom: none;
+          }
+
+          #description div {
+            margin-top: 0.5em
+          }
+
+          #description ul#pages {
+            display: inline;
+            text-align: center;
+            list-style: none;
+            margin-left: 0;
+            padding-left: 0;
+          }
+
+          #description ul#pages li {
+            list-style: none;
+            display: inline;
+            margin-right: 1.5em;
+          }
+
+        #content {
+          margin: 0;
+        }
+
+          #search-results {
+            margin: 0 0 2em 0;
+          }
+
+          .permalink {
+            position: absolute;
+            right: 510px;
+            text-align: right;
+          }
+
+          .permalink a {
+            color: #A8A8A8 !important;
+            text-decoration: none;
+            border-bottom: none !important;
+          }
+
+          .permalink a:hover {
+            color: {color:Link color} !important;
+          }
+
+          #content p {
+            margin: 0 0 12px 0;
+          }
+
+          #content a {
+            color: {color:Link color};
+            text-decoration: none;
+            padding-bottom: 1px;
+            border-bottom: 1px solid {color:Link underline color};
+          }
+
+          #content a:hover {
+            border-bottom: none;
+          }
+
+          #content h2 {
+            font-family: "Gill Sans", "Gill Sans Std", "Gill Sans MT", Georgia, serif;
+            font-weight: normal;
+            font-size: 17px;
+            line-height: 21px;
+            margin-bottom: 12px;
+          }
+
+          #content h3 {
+            font-family: "Gill Sans", "Gill Sans Std", "Gill Sans MT", Georgia, serif;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+          }
+
+          #content blockquote {
+            margin-right: 0;
+            margin-bottom: 12px;
+            margin-left: 1em;
+            padding-left: 1em;
+            border-left: 1px solid {color:Link underline color};
+          }
+
+          #content ul, #content ol {
+            margin-left: 1em;
+            padding-left: 1em;
+            margin-bottom: 12px;
+          }
+
+          #content img {
+            max-width: 100%;
+          }
+
+          .post {
+            margin: 0 0 6.5em 0;
+          }
+
+          .post img, .post embed, .post object {
+            display: block;
+            margin: 0 0 19px 0;
+            border: none;
+          }
+
+            .text h2 a, .text h2 a:hover, .chat h2 a, .chat h2 a:hover {
+              color: #323B41 !important;
+              border-bottom: none !important;
+            }
+
+            .link h2 a {
+              color: {color:Link color};
+              text-decoration: none;
+              padding-bottom: 1px;
+              border-bottom: 1px solid {color:Link underline color};
+            }
+
+            .link h2 a:hover {
+              border-bottom: none;
+            }
+
+            .photo, .video, .audio {
+              padding: 4px 0 0 0;
+            }
+
+            .video embed, .video object {
+              min-width: 100%;
+            }
+
+            /* This should fix Vimeo embeds, correct width and bottom margin */
+            .video iframe {
+              width: 100%;
+              margin: 0 0 13px 0;
+            }
+
+            .audio {
+              min-height: 80px;
+            }
+
+            .big-quote {
+              width: 100% !important;
+              font-family: "Calisto", "Calibri", "Cambria", "Droid Sans", Georgia, serif !important;
+              font-size: 18px !important;
+              line-height: 20px !important;
+              text-indent: -0.45em !important;
+              border-left: none !important;
+              margin-left: 0 !important;
+              padding-left: 0 !important;
+            }
+
+            .big-quote:before {
+              content: '“';
+            }
+
+            .big-quote:after {
+              content: '”';
+            }
+
+            .chat ul {
+              list-style: none;
+              margin-left: 0 !important;
+              padding-left: 0 !important;
+            }
+
+            .album-art {
+              float: left;
+              width: 80px;
+              height: 80px;
+              margin: 0 13px 13px 0;
+              -webkit-border-radius: 2px;
+              -moz-border-radius: 2px;
+              -webkit-box-shadow: 0 1px 3px #A8A8A8;
+              -moz-box-shadow: 0 1px 3px #A8A8A8;
+              overflow: hidden;
+            }
+
+          ol.notes {
+            list-style: none;
+            margin-left: 0 !important;
+            padding-left: 0 !important;
+          }
+
+          ol.notes li.note img.avatar {
+            display: none;
+          }
+
+        #nav {
+          text-align: center;
+        }
+
+        #nav a {
+          color: {color:Link color};
+          text-decoration: none;
+          padding-bottom: 1px;
+          border-bottom: 1px solid {color:Link underline color};
+        }
+
+        #nav a:hover {
+          border-bottom: none;
+        }
+
+        #footer {
+          color: #A8A8A8;
+          font-size: 10px;
+          margin: 6.5em 0 0 0;
+          text-align: center;
+        }
+
+        #footer a {
+          color: inherit;
+          text-decoration: none;
+          padding-bottom: 1px;
+          border-bottom: 1px solid {color:Link underline color};
+        }
+
+        #footer a:hover {
+          border-bottom: none;
+        }
+
+        #footer form {
+          position: center;
+          bottom: 0;
+          right: 0;
+        }
+
+        #footer input {
+          width: 140px;
+          height: 15px;
+          border: 1px solid #A8A8A8;
+          font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
+          font-size: 10px;
+          line-height: 15px;
+          color: #A8A8A8;
+        }
+
+        {CustomCSS}
+
+    </style>
+
+    <!--
+      Widescreen YouTube Embeds by Matthew Buchanan & Hayden Hunter
+      http://matthewbuchanan.name/451892574
+      http://blog.haydenhunter.me
+
+      Released under a Creative Commons attribution license:
+      http://creativecommons.org/licenses/by/3.0/nz/
+    -->
+    <script type="text/javascript" src="http://static.tumblr.com/gamwyyb/AWMl9e51w/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+      $("object").each(function () {
+        if ($(this).find("embed[src^='http://www.youtube.com']").length > 0) {
+          // Identify and hide embed(s)
+          var parent = $(this).parent();
+          parent.css("visibility","hidden");
+          var youtubeCode = parent.html();
+          var params = "";
+          if (youtubeCode.toLowerCase().indexOf("<param") == -1) {
+            // IE doesn't return params with html(), so…
+            $("param", this).each(function () {
+              params += $(this).get(0).outerHTML;
+            });
+          }
+          // Set colours in control bar to match page background
+          var oldOpts = /rel=0/g;
+          var newOpts = "rel=0&amp;color1=0xE4E4E4&amp;color2=0xFFFFFF";
+          youtubeCode = youtubeCode.replace(oldOpts, newOpts);
+          if (params != "") {
+            params = params.replace(oldOpts, newOpts);
+            youtubeCode = youtubeCode.replace(/<embed/i, params + "<embed");
+          }
+          // Extract YouTube ID and calculate ideal height
+          var youtubeIDParam = $(this).find("embed").attr("src");
+          var youtubeIDPattern = /\/v\/([0-9A-Za-z-_]*)/;
+          var youtubeID = youtubeIDParam.match(youtubeIDPattern);
+          var youtubeHeight = Math.floor(parent.find("object").width() * 0.75 + 25);
+          var youtubeHeightWide = Math.floor(parent.find("object").width() * 0.5625 + 25);
+          // Test for widescreen aspect ratio
+          $.getJSON("http://gdata.youtube.com/feeds/api/videos/" + youtubeID[1] + "?v=2&alt=json-in-script&callback=?", function (data) {
+            oldOpts = /height="?([0-9]*)"?/g;
+            if (data.entry.media$group.yt$aspectRatio != null) {
+              newOpts = 'height="' + youtubeHeightWide + '"';
+            } else {
+              newOpts = 'height="' + youtubeHeight + '"';
+            }
+            youtubeCode = youtubeCode.replace(oldOpts, newOpts);
+            if (params != "") {
+              params = params.replace(oldOpts, newOpts);
+              youtubeCode = youtubeCode.replace(/<embed/i, params + "<embed");
+            }
+            // Replace YouTube embed with new code
+            parent.html(youtubeCode).css("visibility","visible");
+          });
+        }
+      });
+    });
+    </script>
+
+    <!-- Add your Google Analytics code here-->
+    <!-- Add your Google Analytics code here-->
+
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="header">
+        <h1><a href="/">{Title}</a></h1>
+        <div id="description">
+          {Description}
+          <div>
+          {block:HasPages}
+          {block:Pages}<ul id="pages"><li></li><a href="{URL}">{Label}</a></ul>{/block:Pages}
+          {/block:HasPages}
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        {block:SearchPage}
+        <div id="search-results">
+          {SearchResultCount} Results for <b>{SearchQuery}</b>
+        </div>
+        {/block:SearchPage}
+        {block:Posts}
+        <div class="permalink"><a href="{Permalink}">{block:NewDayDate}{Year}.{MonthNumberWithZero}.{DayOfMonthWithZero}{/block:NewDayDate}{block:SameDayDate}¬{/block:SameDayDate}</a></div>
+        {block:Text}
+        <div class="text post">
+          {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+          {Body}
+        </div>
+        {/block:Text}
+        {block:Link}
+        <div class="link post">
+          <h2><a href="{URL}">{Name}</a></h2>
+          {block:Description}{Description}{/block:Description}
+        </div>
+        {/block:Link}
+        {block:Quote}
+        <div class="quote post">
+          <blockquote class="big-quote">{Quote}</blockquote>
+          {block:Source}{Source}{/block:Source}
+        </div>
+        {/block:Quote}
+        {block:Photo}
+        <div class="photo post">
+          {LinkOpenTag}<img src="{PhotoUrl-500}" alt="{PhotoAlt}">{LinkCloseTag}
+          {block:Caption}{Caption}{/block:Caption}
+        </div>
+        {/block:Photo}
+        {block:Chat}
+        <div class="chat post">
+          {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+          <ul>
+            {block:Lines}<li>{block:Label}<b>{Label}</b>{/block:Label} {Line}</li>{/block:Lines}
+          </ul>
+        </div>
+        {/block:Chat}
+        {block:Audio}
+        <div class="audio post">
+          {block:AlbumArt}<div class="album-art"><img src="{AlbumArtURL}"></div>{/block:AlbumArt}
+          {AudioPlayerBlack}
+          {block:Caption}{Caption}{/block:Caption}
+        </div>
+        {/block:Audio}
+        {block:Video}
+        <div class="video post">
+          {Video-400}
+          {block:Caption}{Caption}{/block:Caption}
+        </div>
+        {/block:Video}
+        {block:IfShowPostNotes}{block:PostNotes}
+        <h3>Notes</h3>
+        {PostNotes}
+        {/block:PostNotes}{/block:IfShowPostNotes}
+        <div style="font-size: 10px; text-align: left;"><a class="dsq-comment-count" href="{Permalink}#disqus_thread">Comments</a></div>
+        {/block:Posts}
+
+        <!-- Your disqus code in here -->
+        <!-- Your disqus code in here -->
+
+      </div>
+      {block:IndexPage}
+      {block:Pagination}
+      <div id="nav">
+        {block:NextPage}<a href="{NextPage}"><b>« Older</b></a>&nbsp;&nbsp;&nbsp;{/block:NextPage}{CurrentPage} / {TotalPages}{block:PreviousPage}&nbsp;&nbsp;&nbsp;<a href="{PreviousPage}"><b>Newer »</b></a>{/block:PreviousPage}
+      </div>
+      {/block:Pagination}
+      {/block:IndexPage}
+      <div id="footer">
+      
+      <form action="/search" method="get">
+          <input type="text" name="q" value="Search" onclick="javascript:if (this.value == 'Search') this.value = '';"/>
+        </form>
+      <p>Powered by <a href="http://tumblr.com">Tumblr</a>. Whitepage theme by <a href="http://teoten.tumblr.com/">teoten</a>.</p>
+            
+      </div>
+    </div>
+  </body>
+</html>

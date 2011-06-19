@@ -11,4 +11,4 @@ http://github.com/joe74/whitepage
 
 * To set it up in your tumblr.com account, you'll have to do it via 'Customization' in your admin interface at tumblr.com
 
-* To set up comments with Disqus, you'll have to follow instructions in 'Install' at your Disqus account
+* To set up comments with Disqus, you'll have to follow instructions in 'Install' at your Disqus account. The htl code has already a commentary where disqus code should go. The same for Google Analytics and such.

@@ -21,7 +21,11 @@
     <meta name="color:Link underline color" content="#B3F26D">
     <meta name="if:Show post notes" content="1">
 
+    <!-- Styles -->
+
     <style>
+
+    /*------ GENERAL ------*/    
 
     body {
       background: white;
@@ -399,7 +403,7 @@
         </div>
         {/block:SearchPage}
         {block:Posts}
-        <div class="permalink"><a href="{Permalink}">{block:NewDayDate}{Year}.{MonthNumberWithZero}.{DayOfMonthWithZero}{/block:NewDayDate}{block:SameDayDate}¬{/block:SameDayDate}</a></div>
+        <div class="permalink"><a href="{Permalink}">{block:NewDayDate}{Year}.{MonthNumberWithZero}.{DayOfMonthWithZero}{/block:NewDayDate}{block:SameDayDate}***{/block:SameDayDate}</a></div>
         {block:Text}
         <div class="text post">
           {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
@@ -464,10 +468,15 @@
       {/block:Pagination}
       {/block:IndexPage}
       <div id="footer">
-      
+          
+          <!--- Search Form --->
+
       <form action="/search" method="get">
           <input type="text" name="q" value="Search" onclick="javascript:if (this.value == 'Search') this.value = '';"/>
-        </form>
+      </form>
+       
+        <!--- Atribution --->
+        
       <p>Powered by <a href="http://tumblr.com">Tumblr</a>. Whitepage theme by <a href="http://teoten.tumblr.com/">teoten</a>.</p>
             
       </div>

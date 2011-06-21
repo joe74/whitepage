@@ -5,10 +5,10 @@ Version 1.0 ready.
 
 This theme is originally based in Arithmetica, by [Samuel Kelly](http://log.samuelkelly.net/).
 
-LICENSE:
+LICENSE:  
 This work is licensed under the Creative Commons Attribution-Share Alike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/3.0/ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
 
-SOURCE:
+SOURCE:  
 http://github.com/joe74/whitepage
 
 * To set it up in your tumblr.com account, you'll have to do it via 'Customization' in your admin interface at tumblr.com

@@ -1,5 +1,5 @@
-My tumblr.com theme project
-http://teoten.tumblr.com/
+My tumblr.com theme project  
+http://teoten.tumblr.com/  
 
 Version 1.0 ready.
 
@@ -11,6 +11,6 @@ This work is licensed under the Creative Commons Attribution-Share Alike 3.0 Unp
 SOURCE:  
 http://github.com/joe74/whitepage
 
-* To set it up in your tumblr.com account, you'll have to do it via 'Customization' in your admin interface at tumblr.com
+* To set it up in your tumblr.com account, you'll have to do it via 'Customization' in your admin interface at tumblr. There you have to change it to _custom HTML_ and paste the code inside the `.html` file you got from here, save and _voila_.
 
 * To set up comments with Disqus, you'll have to follow instructions in 'Install' at your Disqus account. The html code has already a commentary where disqus code should go. The same for Google Analytics and such.

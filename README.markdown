@@ -1,5 +1,5 @@
 My tumblr.com theme project  
-http://teoten.info/  
+http://teoten.tumblr.com/  
 
 Version 1.0 ready.
 
